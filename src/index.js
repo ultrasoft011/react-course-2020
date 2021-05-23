@@ -48,16 +48,29 @@ function Booklist() {
   return (
     <section className="booklist">
       <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
 
+const author = "Marijn Haverbeke";
+
 const Book = () => {
+  const title =
+    "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming";
+	return (
+    <article className="book">
+      <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg"></img>
+	  { /* Javascript in our JSX -> with {the code} */ }
+	  <h1>{title}</h1>
+	  <h4>{author}</h4>
+	  <p>{6 + 6}</p>
+    </article>
+  );
+};
+
+// Book application with nested componentes
+
+/* const Book = () => {
   return (
     <article className="book">
       <Image />
@@ -82,9 +95,9 @@ const Title = () => (
 
 // To access to the Javascript world to style an element, need to use {}, the properties with the camelCase and values inside of ' '
 
-const Author = () => (
+/* const Author = () => (
   <h3 style={{ color: "#617d98", fontSize: "18px" }}> by Marijn Haverbeke</h3>
-);
+); */
 
 // ReactDom render method to make it work with the root element
 ReactDom.render(<Booklist />, document.getElementById("root"));
