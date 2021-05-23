@@ -44,26 +44,27 @@ const Person = () => {
 
 // Booklist application
 
+// Setup vars
+const author = "Marijn Haverbeke";
+const title = "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming";
+const img = "https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg";
+
 function Booklist() {
   return (
     <section className="booklist">
-      <Book />
+      <Book number='Book #1' />
+	  <Book number='Book #2' />
     </section>
   );
 }
 
-const author = "Marijn Haverbeke";
-
-const Book = () => {
-  const title =
-    "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming";
+const Book = (props) => {
 	return (
     <article className="book">
-      <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg"></img>
-	  { /* Javascript in our JSX -> with {the code} */ }
-	  <h1>{title}</h1>
-	  <h4>{author}</h4>
-	  <p>{6 + 6}</p>
+      {/* Javascript in our JSX -> with {the code} */}
+      <img src={img} alt="" />
+      <h1>{title + ' ' + props.number}</h1>
+      <h4>{author}</h4>
     </article>
   );
 };
