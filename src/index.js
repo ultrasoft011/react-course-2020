@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
+// CSS
+import "./index.css";
 
 /* // functional component
 function Greeting() {
@@ -42,25 +44,32 @@ const Person = () => {
 
 // Booklist application
 
-function Booklist () {
-	return (
-		<section>
-			<h1>Booklist application</h1>
-			<Book />
-		</section>
-	)
-
+function Booklist() {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 }
 
 const Book = () => {
-	return <article> 
-		<Image />
-		<Title />
-		<Author />
-	</article>
-}
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-const Image = () => <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg"></img>
+const Image = () => (
+  <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg"></img>
+);
 
 const Title = () => (
   <h1>
@@ -68,7 +77,6 @@ const Title = () => (
   </h1>
 );
 
-const Author = () => <h2>by Marijn Haverbeke</h2>
+const Author = () => <h3>by Marijn Haverbeke</h3>;
 
 ReactDom.render(<Booklist />, document.getElementById("root"));
-
