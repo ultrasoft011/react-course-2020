@@ -16,10 +16,23 @@ function Greeting() {
 function Greeting() {
 	return (
 		<div>
+			{/* // Call Person function with <Person /> */}
+			<Person /> 
 			<h1>Hello World with a Div!</h1>
 		</div>
 	)
 }
+
+// Nested components, React tools
+/* // Function "Person" that will be use inside of Greeting with <Person />
+const Person = () => {
+	return (
+		<div>
+			<h1>Andres aka Ultrasoft</h1>
+		</div>
+	)
+};
+ */
 
 
 /* React create element: another way to declare react components
