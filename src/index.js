@@ -13,15 +13,15 @@ function Greeting() {
 // 4. className instead of class
 // 5. Close every element />
 
-function Greeting() {
+/* function Greeting() {
 	return (
 		<div>
-			{/* // Call Person function with <Person /> */}
+			// Call Person function with <Person />
 			<Person /> 
 			<h1>Hello World with a Div!</h1>
 		</div>
 	)
-}
+} */
 
 // Nested components, React tools
 /* // Function "Person" that will be use inside of Greeting with <Person />
@@ -34,12 +34,41 @@ const Person = () => {
 };
  */
 
-
 /* React create element: another way to declare react components
 	const Greeting1 = () => {
 	return React.createElement('h1', {}, 'hello world') 
 	}
  */
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+// Booklist application
+
+function Booklist () {
+	return (
+		<section>
+			<h1>Booklist application</h1>
+			<Book />
+		</section>
+	)
+
+}
+
+const Book = () => {
+	return <article> 
+		<Image />
+		<Title />
+		<Author />
+	</article>
+}
+
+const Image = () => <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg"></img>
+
+const Title = () => (
+  <h1>
+    Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming
+  </h1>
+);
+
+const Author = () => <h2>by Marijn Haverbeke</h2>
+
+ReactDom.render(<Booklist />, document.getElementById("root"));
 
