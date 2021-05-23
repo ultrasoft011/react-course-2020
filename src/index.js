@@ -77,6 +77,14 @@ const Title = () => (
   </h1>
 );
 
-const Author = () => <h3>by Marijn Haverbeke</h3>;
+/* const Author = () => <h3>by Marijn Haverbeke</h3>;
+ */
+
+// To access to the Javascript world to style an element, need to use {}, the properties with the camelCase and values inside of ' '
+
+const Author = () => (
+  <h3 style={{ color: "#617d98", fontSize: "18px" }}> by Marijn Haverbeke</h3>
+);
+
 // ReactDom render method to make it work with the root element
 ReactDom.render(<Booklist />, document.getElementById("root"));
