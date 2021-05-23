@@ -78,5 +78,5 @@ const Title = () => (
 );
 
 const Author = () => <h3>by Marijn Haverbeke</h3>;
-
+// ReactDom render method to make it work with the root element
 ReactDom.render(<Booklist />, document.getElementById("root"));
