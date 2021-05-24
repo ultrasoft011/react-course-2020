@@ -45,26 +45,43 @@ const Person = () => {
 // Booklist application
 
 // Setup vars
-const author = "Marijn Haverbeke";
-const title = "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming";
-const img = "https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg";
+const firstBook = {
+  img: "https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY218_.jpg",
+  title:
+    "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming",
+  author: "Marijn Haverbeke",
+};
+
+const secondBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/41T5H8u7fUL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+  title: "You Don't Know JS Yet: Get Started",
+  author: "Kyle Simpson",
+};
 
 function Booklist() {
   return (
     <section className="booklist">
-      <Book number='Book #1' />
-	  <Book number='Book #2' />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
 const Book = (props) => {
-	return (
+  return (
     <article className="book">
       {/* Javascript in our JSX -> with {the code} */}
-      <img src={img} alt="" />
-      <h1>{title + ' ' + props.number}</h1>
-      <h4>{author}</h4>
+      <img src={props.img} />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
   );
 };
