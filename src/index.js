@@ -50,6 +50,10 @@ const Book = (props) => {
     const clickHandler = () =>  {
         alert('Hello React!');
     }
+    // Passing an argument to an event 
+    const complexExample = (author) => {
+        console.log(author);
+    };
     return (
       <article className="book">
         <img src={img} alt=''></img>
@@ -57,6 +61,8 @@ const Book = (props) => {
         <h1 onClick={() => console.log(title)}>{title}</h1>
         <h4>{author}</h4>
         <button type="button" onClick={clickHandler}>Reference Example</button>
+        {/* For this complex example need to set an arrow function in order to get the author declared at the beginning */}
+        <button type="button" onClick={() => complexExample(author)}>Complex</button>
       </article>
     );
 }
