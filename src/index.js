@@ -33,6 +33,7 @@ function BookList() {
     <section className="booklist">
       {books.map((book) => {
         return (
+            /* Another way to get the objet is with the spread operator => changing book={book} for {...book}*/
             <Book key={book.id} book={book}></Book>
         )
       })}
@@ -41,12 +42,21 @@ function BookList() {
 }
 
 const Book = (props) => {
+    // Remove props.book, only keep props if we are going to use the spread operator 
+    // React events: attribute and eventHandler
+    // onClick, onMouseOver (Events examples)
     const {img, title, author} = props.book;
+    //Function to handle the click event
+    const clickHandler = () =>  {
+        alert('Hello React!');
+    }
     return (
       <article className="book">
-        <img src={img} />
-        <h1>{title}</h1>
+        <img src={img} alt=''></img>
+        {/* Events inline */}
+        <h1 onClick={() => console.log(title)}>{title}</h1>
         <h4>{author}</h4>
+        <button type="button" onClick={clickHandler}>Reference Example</button>
       </article>
     );
 }
