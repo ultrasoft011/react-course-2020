@@ -35,7 +35,13 @@ body {
     }
 
     .book h4 {
+        margin-top: 0.5rem;
         font-size: 15px;
         color: rgb(142, 161, 202);
+    }
+
+    .book p {
+        margin-top: 0.5rem;
+        font-style: italic;
     }
 }

@@ -65,7 +65,12 @@ function Booklist() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+		<p>
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt,
+		vero.
+		</p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -89,12 +94,13 @@ function Booklist() {
 
 //Second way to access to props - destructuring
 const Book = (props) => {
-	const {img, title, author} = props;
+	const {img, title, author, children} = props;
 	return (
 		<article className="book">
 			<img src={img} />
 			<h1>{title}</h1>
 			<h4>{author}</h4>
+			{children}
 		</article>
 	)
 }
