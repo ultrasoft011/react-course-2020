@@ -75,16 +75,31 @@ function Booklist() {
   );
 }
 
-const Book = (props) => {
+//First way to access to props
+/* const Book = (props) => {
   return (
     <article className="book">
-      {/* Javascript in our JSX -> with {the code} */}
+      {Javascript in our JSX -> with {the code}}
       <img src={props.img} />
       <h1>{props.title}</h1>
       <h4>{props.author}</h4>
     </article>
   );
-};
+}; */
+
+//Second way to access to props - destructuring
+const Book = (props) => {
+	const {img, title, author} = props;
+	return (
+		<article className="book">
+			<img src={img} />
+			<h1>{title}</h1>
+			<h4>{author}</h4>
+		</article>
+	)
+}
+
+
 
 // Book application with nested componentes
 
